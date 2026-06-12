@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  program: MyString
+  mode_of_study: MyString
+  full_name: MyString
+  last_name: MyString
+  id_passport_number: MyString
+  date_of_birth: 2026-06-12
+  gender: MyString
+  nationality: MyString
+  race: MyString
+  home_address: MyText
+  phone: MyString
+  email: MyString
+  has_disability: MyString
+  disability_details: MyText
+  qualification: MyString
+  institution: MyString
+  year_completed: MyString
+  overall_result: MyString
+  employer: MyString
+  position: MyString
+  duration: MyString
+  additional_information: MyText
+  status: MyString
+
+two:
+  program: MyString
+  mode_of_study: MyString
+  full_name: MyString
+  last_name: MyString
+  id_passport_number: MyString
+  date_of_birth: 2026-06-12
+  gender: MyString
+  nationality: MyString
+  race: MyString
+  home_address: MyText
+  phone: MyString
+  email: MyString
+  has_disability: MyString
+  disability_details: MyText
+  qualification: MyString
+  institution: MyString
+  year_completed: MyString
+  overall_result: MyString
+  employer: MyString
+  position: MyString
+  duration: MyString
+  additional_information: MyText
+  status: MyString
