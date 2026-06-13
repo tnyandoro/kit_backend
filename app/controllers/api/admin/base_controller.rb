@@ -10,6 +10,7 @@ module Api
         
         begin
           decoded = JsonWebToken.decode(token)
+          # This MUST say Administrator, not AdminUser
           @current_admin = Administrator.find(decoded[:admin_id])
         rescue JWT::DecodeError, ActiveRecord::RecordNotFound
           render json: { error: "Unauthorized. Invalid or missing token." }, status: :unauthorized
