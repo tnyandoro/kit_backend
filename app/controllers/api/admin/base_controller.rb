@@ -1,4 +1,3 @@
-# app/controllers/api/admin/base_controller.rb
 module Api
   module Admin
     class BaseController < ApplicationController
@@ -11,7 +10,7 @@ module Api
         
         begin
           decoded = JsonWebToken.decode(token)
-          @current_admin = Administrator.find(decoded[:admin_id]) # <-- Changed here
+          @current_admin = Administrator.find(decoded[:admin_id])
         rescue JWT::DecodeError, ActiveRecord::RecordNotFound
           render json: { error: "Unauthorized. Invalid or missing token." }, status: :unauthorized
         end
