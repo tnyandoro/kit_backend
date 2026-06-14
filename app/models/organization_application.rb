@@ -13,6 +13,6 @@ class OrganizationApplication < ApplicationRecord
   private
 
   def set_default_status
-    self.status ||= 'pending_review'
+    self.status ||= "pending_review"
   end
 end

@@ -5,7 +5,7 @@ module Api
       # GET /api/admin/organizations
       def index
         orgs = OrganizationApplication.all
-        
+
         orgs = orgs.where("institution_name ILIKE ? OR email ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%") if params[:query].present?
         orgs = orgs.where(status: params[:status]) if params[:status].present?
 
@@ -22,7 +22,7 @@ module Api
       def update_status
         org = OrganizationApplication.find(params[:id])
         allowed_statuses = %w[pending_review accepted rejected activated]
-        
+
         if allowed_statuses.include?(params[:status])
           org.update(status: params[:status])
           render json: { message: "Organization status updated to #{params[:status]}", organization: org }

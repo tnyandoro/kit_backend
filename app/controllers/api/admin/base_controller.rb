@@ -6,8 +6,8 @@ module Api
       private
 
       def authenticate_admin!
-        token = request.headers['Authorization']&.split(' ')&.last
-        
+        token = request.headers["Authorization"]&.split(" ")&.last
+
         begin
           decoded = JsonWebToken.decode(token)
           # This MUST say Administrator, not AdminUser

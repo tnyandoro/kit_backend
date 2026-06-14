@@ -5,7 +5,7 @@ module Api
       # GET /api/admin/students
       def index
         students = IndividualApplication.all
-        
+
         # Basic search and filtering
         students = students.where("full_name ILIKE ? OR email ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%") if params[:query].present?
         students = students.where(status: params[:status]) if params[:status].present?
@@ -23,10 +23,10 @@ module Api
       # PATCH /api/admin/students/:id/update_status
       def update_status
         student = IndividualApplication.find(params[:id])
-        
+
         # Allowed statuses for the admin dashboard
         allowed_statuses = %w[pending_review accepted rejected activated]
-        
+
         if allowed_statuses.include?(params[:status])
           student.update(status: params[:status])
           render json: { message: "Student status updated to #{params[:status]}", student: student }

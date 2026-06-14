@@ -9,13 +9,13 @@ class IndividualApplication < ApplicationRecord
   validates :has_disability, inclusion: { in: %w[yes no] }
   validates :qualification, inclusion: { in: %w[olevel alevel other] }
   validates :institution, :year_completed, :overall_result, presence: true
-  
+
   # Set default status
   before_validation :set_default_status, on: :create
 
   private
 
   def set_default_status
-    self.status ||= 'pending_review'
+    self.status ||= "pending_review"
   end
 end
