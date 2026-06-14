@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  faculty: MyString
+  name: MyString
+  level: MyString
+  duration: MyString
+
+two:
+  faculty: MyString
+  name: MyString
+  level: MyString
+  duration: MyString
