@@ -23,6 +23,10 @@ module Api
           render json: { error: "Invalid status" }, status: :unprocessable_entity
         end
       end
+
+      def destroy
+        require_super_admin!
+      end
     end
   end
 end

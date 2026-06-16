@@ -1,6 +1,8 @@
 module Api
   module Admin
     class DashboardController < BaseController
+      before_action :require_staff_or_above!
+
       def stats
         render json: {
           total_students: IndividualApplication.count,

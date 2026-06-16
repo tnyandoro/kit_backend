@@ -18,9 +18,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_13_205355) do
     t.datetime "created_at", null: false
     t.string "email"
     t.string "password_digest"
-    t.string "role"
+    t.string "role", default: "staff"
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_administrators_on_email"
+    t.index ["email"], name: "index_administrators_on_email", unique: true
   end
 
   create_table "applicants", force: :cascade do |t|
