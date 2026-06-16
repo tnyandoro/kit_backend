@@ -12,11 +12,15 @@ puts "================================="
 puts "Seeding administrators..."
 puts "================================="
 
-admin = Administrator.find_or_create_by(email: "admin@kit.com") do |a|
-  a.password = "ChangeMe123!"
-  a.password_confirmation = "ChangeMe123!"
-  a.role = "super_admin"
-end
+admin = Administrator.find_or_initialize_by(
+  email: "admin@kit.com"
+)
 
-puts "Admin exists: #{admin.email}"
+admin.password = "ChangeMe123!"
+admin.password_confirmation = "ChangeMe123!"
+admin.role = "super_admin"
+
+admin.save!
+
+puts "Admin updated: #{admin.email}"
 puts "Total admins: #{Administrator.count}"
