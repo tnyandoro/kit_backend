@@ -12,15 +12,10 @@ puts "================================="
 puts "Seeding administrators..."
 puts "================================="
 
-admin = Administrator.find_or_initialize_by(
-  email: "admin@kit.com"
-)
+admin = Administrator.find_or_initialize_by(email: "admin@kit.com")
 
 admin.password = "ChangeMe123!"
 admin.password_confirmation = "ChangeMe123!"
 admin.role = "super_admin"
 
 admin.save!
-
-puts "Admin updated: #{admin.email}"
-puts "Total admins: #{Administrator.count}"
